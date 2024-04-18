@@ -1,26 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Snake Game</title>
   <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
+      color: green;
+    }
 
-  body {
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    border: 1px solid white;
-  }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    canvas {
+      border: 4px solid green;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #main-menu, #game-over {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 100px;
+      margin-top: -150px;
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 30px;
+      color: white;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      font-family: 'Courier New';
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    button.selected {
+      border: 2px solid white;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    #game-over h1 {
+      color: red;
+    }
+
+    #difficulty-buttons, #color-buttons {
+      margin-top: 20px;
+    }
+
+    #difficulty-buttons button, #color-buttons button {
+      margin: 0 10px;
+    }
+
+    .color-button {
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #red { background-color: red; }
+    #orange { background-color: orange; }
+    #yellow { background-color: yellow; }
+    #green { background-color: green; }
+    #blue { background-color: blue; }
+    #rebeccapurple { background-color: rebeccapurple; }
+    #deeppink { background-color: deeppink; }
   </style>
 </head>
 <body>
+<div id="main-menu">
+  <h1>Snake Game</h1>
+  <button onclick="startGame()">Play</button>
+  <div id="difficulty-buttons">
+    <h3>Difficulty</h3>
+    <button id="easy" onclick="selectDifficulty('easy')">Easy</button>
+    <button id="medium" class="selected" onclick="selectDifficulty('medium')">Medium</button>
+    <button id="hard" onclick="selectDifficulty('hard')">Hard</button>
+  </div>
+  <!-- Color Selection Buttons -->
+  <div id="color-buttons">
+    <h3>Snake Color</h3>
+    <button id="red" class="color-button" onclick="selectColor('red')"></button>
+    <button id="orange" class="color-button" onclick="selectColor('orange')"></button>
+    <button id="yellow" class="color-button" onclick="selectColor('yellow')"></button>
+    <button id="green" class="color-button selected" onclick="selectColor('green')"></button>
+    <button id="blue" class="color-button" onclick="selectColor('blue')"></button>
+    <button id="rebeccapurple" class="color-button" onclick="selectColor('rebeccapurple')"></button>
+    <button id="deeppink" class="color-button" onclick="selectColor('deeppink')"></button>
+  </div>
+</div>
 <canvas width="560" height="560" id="game"></canvas>
+<div id="game-over" style="display: none;">
+  <h2>Game Over!</h2>
+  <button onclick="restartGame()">Restart</button>
+  <button onclick="backToMainMenu()">Main Menu</button>
+</div>
+<div id="score" style="display: none; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-family:'Courier New'; font-weight: bold; font-size: 24px; color: green;">
+  Score: <span id="score-value" style="color:white">0</span>
+</div>
 <script src="snake.js"></script>
 </body>
 </html>
