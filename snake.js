@@ -27,6 +27,9 @@ var score = 0;
 var scoreElement = document.getElementById('score-value');
 var scoreDiv = document.getElementById('score');
 var difficulty = 'medium'; // default difficulty
+var backgroundMusic = document.getElementById('backgroundMusic');
+var appleSound = new Audio('apple.mp3'); // Create new audio element for apple sound
+var loseSound = new Audio('lose.mp3'); // Create new audio element for lose sound
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -66,6 +69,7 @@ function startGame() {
     scoreDiv.style.display = 'block';
     score = 0;
     scoreElement.textContent = score;
+    playBackgroundMusic();
     requestAnimationFrame(gameLoop);
 }
 
@@ -88,6 +92,8 @@ function restartGame() {
     gameCanvas.style.display = 'block';
     gameOverScreen.style.display = 'none';
 
+    pauseLoseSound();
+    playBackgroundMusic();
     requestAnimationFrame(gameLoop);
 }
 
@@ -107,10 +113,37 @@ function backToMainMenu() {
     gameCanvas.style.display = 'none';
     gameOverScreen.style.display = 'none';
     scoreDiv.style.display = 'none';
+
+    pauseLoseSound();
+    pauseBackgroundMusic();
+}
+
+function pauseLoseSound() {
+    loseSound.pause();
+}
+
+function playBackgroundMusic() {
+    backgroundMusic.play();
+}
+
+function pauseBackgroundMusic() {
+    backgroundMusic.pause();
+}
+
+function playAppleSound() {
+    appleSound.currentTime = 0; // Reset the sound to the beginning
+    appleSound.play();
+}
+
+function playLoseSound() {
+    loseSound.currentTime = 0; // Reset the sound to the beginning
+    loseSound.play();
 }
 
 function gameLoop() {
     if (gameOver) {
+        pauseBackgroundMusic();
+        playLoseSound(); // Play lose sound effect
         return;
     }
 
@@ -153,6 +186,9 @@ function gameLoop() {
             // Increment score and update display
             score++;
             scoreElement.textContent = score;
+
+            // Play apple sound effect
+            playAppleSound();
         }
 
         checkCollision(cell, index);
