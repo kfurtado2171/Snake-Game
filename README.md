@@ -13,6 +13,9 @@ For this project we added:
 * Difficulty selection
 * Score Tracker
 * Ability to change the snake's color
+* Background music
+* Sound effects
+
 
 ### Usage
 In order to run play the game, you need to simply

@@ -1,0 +1,588 @@
+{
+  "id": "e06138f5-f887-4486-8f36-6b8d7af1a897",
+  "version": "2.0",
+  "name": "602SnakeGame",
+  "url": "https://kfurtado2171.github.io/Snake-Game/",
+  "tests": [{
+    "id": "4b487a4d-fb9d-4a93-a0d0-85d533d5d91c",
+    "name": "Play Button",
+    "commands": [{
+      "id": "d7396396-1a20-4102-82ba-86fc3293772a",
+      "comment": "",
+      "command": "open",
+      "target": "/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28b16807-dd36-4439-bc40-7cb56103b2f0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1039",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4e72a5c-c567-478c-b2bb-4c148a930ae5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#main-menu > button",
+      "targets": [
+        ["css=#main-menu > button", "css:finder"],
+        ["xpath=//button[@onclick='startGame()']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Play')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "27370059-f0fc-4a0c-9523-a1725ea927fc",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=score@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "39d6e38b-fda8-492d-9dcc-62ef20ff3d64",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: block; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-family: \"Courier New\"; font-weight: bold; font-size: 24px; color: green;"
+    }, {
+      "id": "fe97b32f-d5ff-4425-8fe1-c6e852a483be",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=game@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "695c1ee4-0d99-4521-9fe3-82c6d8925956",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: block;"
+    }]
+  }, {
+    "id": "a1cc6270-ec96-40fd-8c3d-b7bffcb94479",
+    "name": "Game Over Menu",
+    "commands": [{
+      "id": "f1096c01-9b77-4907-8a96-ba18aa60d65e",
+      "comment": "",
+      "command": "open",
+      "target": "https://kfurtado2171.github.io/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5074c0eb-ee80-487c-8a6d-0a3aaa857cdf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0307f853-4929-4e1b-89f6-47cc0dcbdae2",
+      "comment": "",
+      "command": "click",
+      "target": "css=#main-menu > button",
+      "targets": [
+        ["css=#main-menu > button", "css:finder"],
+        ["xpath=//button[@onclick='startGame()']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Play')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8048c8c-b926-4c00-b20b-ccbd72a4b057",
+      "comment": "",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e03ec21d-f3b5-4baf-b5bf-36bb7592d3d2",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=game-over@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "6a7a4751-854f-4f7f-b924-65a35ad0766a",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: block;"
+    }]
+  }, {
+    "id": "d4ba4308-c78e-4b4c-906f-bcc2e422d547",
+    "name": "Test Color Buttons",
+    "commands": [{
+      "id": "97eb5e33-d229-4213-96a5-897f3e48e44d",
+      "comment": "",
+      "command": "open",
+      "target": "https://kfurtado2171.github.io/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5bdd5c0e-b3a0-41de-9955-f28f00825c77",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a598e984-1d33-4779-8b6f-053af8a4ca9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=red",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eee9094e-d891-41a4-b5a3-4496569460c2",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=red@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "1d56ec73-3233-483e-bb6a-09df9f99f65b",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "111282c9-8a10-4558-8732-a69948814846",
+      "comment": "",
+      "command": "click",
+      "target": "id=orange",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a6f2718-6cb9-4b31-9ed2-8870ea812fab",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=orange@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "1854b9a9-d181-4357-b735-17a1082420e3",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "14479604-9590-47fe-b4d6-a4fe3cbbf93b",
+      "comment": "",
+      "command": "click",
+      "target": "id=yellow",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfd79c19-eb21-4170-a924-473e37c1d6a7",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=yellow@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "cfdaf261-4768-4fcb-b124-3d1884315da5",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "42cfb53d-e5b4-4378-806a-df9d53137f7f",
+      "comment": "",
+      "command": "click",
+      "target": "id=green",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cd1865d-6d8e-40c2-8118-2a8356500844",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=green@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "b7c627da-02fe-4942-bd6e-1ac925769251",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "28a07c14-d1c3-4f38-9e2c-d76ad0969b60",
+      "comment": "",
+      "command": "click",
+      "target": "id=blue",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10675e62-3570-4c2f-aa50-c3d4ee81f4f1",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=blue@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "b55958f6-4d57-4b3f-909b-4f34d746da4c",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "737d4541-2663-4fbd-b7b7-a1c1a92994b7",
+      "comment": "",
+      "command": "click",
+      "target": "id=rebeccapurple",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "785357c0-ebe1-415e-bf01-d843d1e9ba13",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=rebeccapurple@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "fdb14087-96e5-403a-99b3-ef8637ae4d76",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }, {
+      "id": "261794d7-54f6-4bfe-b281-dc25bfa5ab44",
+      "comment": "",
+      "command": "click",
+      "target": "id=deeppink",
+      "targets": [
+        ["id=red", "id"],
+        ["css=#red", "css:finder"],
+        ["xpath=//button[@id='red']", "xpath:attributes"],
+        ["xpath=//div[@id='color-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1d35760-5144-435b-9ba0-9c1210bd576d",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=deeppink@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "c071c2a1-6a79-4c82-bd4f-c50c53f215c9",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "color-button selected"
+    }]
+  }, {
+    "id": "e0b1220d-7689-4a97-9c18-c1a0fb84084c",
+    "name": "Test Difficulty Buttons",
+    "commands": [{
+      "id": "4160fb6c-65ff-408b-b6de-87f21c18c40f",
+      "comment": "",
+      "command": "open",
+      "target": "https://kfurtado2171.github.io/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7237ef8c-202c-4c3f-9b06-a8e89a578d0e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f07ad4e5-561c-4440-9f31-888e87991de6",
+      "comment": "",
+      "command": "click",
+      "target": "id=easy",
+      "targets": [
+        ["id=easy", "id"],
+        ["css=#easy", "css:finder"],
+        ["xpath=//button[@id='easy']", "xpath:attributes"],
+        ["xpath=//div[@id='difficulty-buttons']/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Easy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a678952e-c1f2-4155-ad1d-05f4b11d12bc",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=easy@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "953fa4c1-c26b-4118-b25e-357f0581b585",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "selected"
+    }, {
+      "id": "337288f8-4f55-477d-ad28-d965278a5321",
+      "comment": "",
+      "command": "click",
+      "target": "id=medium",
+      "targets": [
+        ["id=medium", "id"],
+        ["css=#medium", "css:finder"],
+        ["xpath=//button[@id='medium']", "xpath:attributes"],
+        ["xpath=//div[@id='difficulty-buttons']/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Medium')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1d8df3d-52c3-474f-b8ba-9e4dc370fecc",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=medium@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "85b46d0e-0a61-4169-84d0-70d5b765335d",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "selected"
+    }, {
+      "id": "2c598c6e-512b-4a45-bbb0-0b53bc5edf91",
+      "comment": "",
+      "command": "click",
+      "target": "id=hard",
+      "targets": [
+        ["id=hard", "id"],
+        ["css=#hard", "css:finder"],
+        ["xpath=//button[@id='hard']", "xpath:attributes"],
+        ["xpath=//div[@id='difficulty-buttons']/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Hard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17d9aaa7-f981-4612-a897-9979496ba0d6",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=hard@class",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "36e49860-118d-43e7-9b89-3b4b89198dd8",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "selected"
+    }]
+  }, {
+    "id": "14cc47ee-2e98-4490-bc78-a9b1b039c2a8",
+    "name": "Restart Button",
+    "commands": [{
+      "id": "ccd57785-fc8c-4922-b3bd-bbee85f3518f",
+      "comment": "",
+      "command": "open",
+      "target": "https://kfurtado2171.github.io/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d02d3c73-9610-4abf-a17e-83061d43652c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4ef4238-412f-4a42-98f1-b8b82000d925",
+      "comment": "",
+      "command": "click",
+      "target": "css=#main-menu > button",
+      "targets": [
+        ["css=#main-menu > button", "css:finder"],
+        ["xpath=//button[@onclick='startGame()']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Play')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ebf95de-0fac-4955-b977-144c943cbefd",
+      "comment": "",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65bfb3f1-2ebd-42db-b2ec-ef62f33386a6",
+      "comment": "",
+      "command": "click",
+      "target": "css=#game-over > button:nth-child(2)",
+      "targets": [
+        ["css=#game-over > button:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='restartGame()']", "xpath:attributes"],
+        ["xpath=//div[@id='game-over']/button", "xpath:idRelative"],
+        ["xpath=//body/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Restart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22569f86-5660-4c19-a7b4-79bf8a2be635",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=game-over@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "b664bb17-1c37-4383-bc0b-759db7bf0000",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: none;"
+    }, {
+      "id": "4719ca33-e636-4d12-871e-a2b194a94d60",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=score-value",
+      "targets": [],
+      "value": "0"
+    }]
+  }, {
+    "id": "269e7697-2087-479c-a518-f7b93a9148a3",
+    "name": "Main Menu Button",
+    "commands": [{
+      "id": "524e1dd2-cd09-471e-8cff-65780a6a7867",
+      "comment": "",
+      "command": "open",
+      "target": "https://kfurtado2171.github.io/Snake-Game/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "590a0b39-de3f-4d35-8f56-531f2de049c0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65db4c6d-e205-4ef1-a90a-3057b70bd0fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#main-menu > button",
+      "targets": [
+        ["css=#main-menu > button", "css:finder"],
+        ["xpath=//button[@onclick='startGame()']", "xpath:attributes"],
+        ["xpath=//div[@id='main-menu']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Play')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0a34e50-b325-474a-8deb-2cf28a972d49",
+      "comment": "",
+      "command": "pause",
+      "target": "6000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9169574d-8a72-408a-b26d-68c9015214bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=#game-over > button:nth-child(3)",
+      "targets": [
+        ["css=#game-over > button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='backToMainMenu()']", "xpath:attributes"],
+        ["xpath=//div[@id='game-over']/button[2]", "xpath:idRelative"],
+        ["xpath=//body/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Main Menu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9462d4cb-1973-4b85-b1e1-f312100154dd",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=game-over@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "a065e3d0-26a7-46da-a541-b06da57aaff2",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: none;"
+    }, {
+      "id": "fc0892ed-5089-45e4-b35a-ac3bf8677b60",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "id=main-menu@style",
+      "targets": [],
+      "value": "tmp"
+    }, {
+      "id": "662587fd-ccf3-4797-83a0-10701b975cda",
+      "comment": "",
+      "command": "assert",
+      "target": "tmp",
+      "targets": [],
+      "value": "display: block;"
+    }]
+  }],
+  "suites": [{
+    "id": "11d8a860-4e99-444f-856a-bded810d576c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4b487a4d-fb9d-4a93-a0d0-85d533d5d91c"]
+  }],
+  "urls": ["https://kfurtado2171.github.io/", "https://kfurtado2171.github.io/Snake-Game/"],
+  "plugins": []
+}
