@@ -16,6 +16,7 @@ For this project we added:
 * Background music
 * Sound effects
 
+
 ### Usage
 In order to run play the game, you need to simply
 download the HTML and JavaScript files onto your
